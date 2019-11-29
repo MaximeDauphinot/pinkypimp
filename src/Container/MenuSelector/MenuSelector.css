@@ -1,0 +1,67 @@
+.numero0{
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(245, 232, 239);
+}
+
+.numero1{
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(245, 232, 239);
+}
+.numero2{
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(245, 232, 239);
+}
+.numero3{
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(245, 232, 239);
+}
+.numero4{
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(245, 232, 239);
+}
+
+@media screen and (max-width: 490px){
+    .title_logo{
+        font-size: 4em;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .numero0{
+        height: calc(100vh - 150px);
+    }
+    
+    .numero1{
+        height: calc(100vh - 150px);
+    }
+    .numero2{
+        height: calc(100vh - 150px);
+    }
+    .numero3{
+        height: calc(100vh - 150px);
+    }
+    .numero4{
+        height: calc(100vh - 150px);
+    }
+}

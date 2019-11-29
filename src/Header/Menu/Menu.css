@@ -1,0 +1,40 @@
+.menu{
+    height: 100%;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: overlay;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.text_menu{
+    font-size: 0.9em;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    max-height: 60px;
+}
+
+.menu:hover{
+    transform: translateY(6px);
+}
+
+.btn_menu{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+    .text_menu{
+        font-size: 0.6em;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .text_menu{
+        font-size: 0.6em;
+    }
+}

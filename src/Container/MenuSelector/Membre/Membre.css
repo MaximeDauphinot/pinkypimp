@@ -1,0 +1,213 @@
+.membre{
+    background-color: rgb(245, 232, 239);
+    overflow: scroll;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    max-width: 940px;
+    margin-top: 150px;
+    margin-bottom: 210px;
+    max-height: 750px;
+    overflow: hidden;
+}
+
+.overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.50);
+    justify-content: center;
+    align-items: center;
+}
+
+.vertSlider{
+    width: 100%;
+    height: 100%;
+}
+
+.slideImgTop{
+    max-width: 100px;
+}
+
+.slideImgBot{
+    max-width: 100px;
+}
+
+.slideImgTop:hover{
+    margin-bottom: 5px;
+}
+
+.slideImgBot:hover{
+    padding-top: 5px;
+}
+
+.slideButton{
+    background-color: rgb(245, 232, 239);
+    border: none;
+    outline: none;
+    max-height: 120px;
+    height: 100%;
+}
+
+.slide{
+    max-height: 520px;
+}
+
+.content{
+    font-family: myFont;
+    outline:none;
+    max-width: 650px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50PX;
+    max-height: 650px;
+    display: -webkit-flex;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pinkedex{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.nompinkedex{
+    display: flex;
+    font-family: myFont;
+    font-size: 3.6em;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+.firstBand{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    height: 50px;
+    margin-left: 7px;
+}
+
+.modalcontent{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.titlemodal{
+    align-content: center;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px 5px;
+}
+
+.pinkyband{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    background: url('../../../ressources/band.png');
+    background-size: 93px;
+    align-self: flex-start;
+}
+
+.whiteBand{
+    height: 25px;
+    background-color: white;
+    z-index: 1;
+    width: auto; 
+}
+
+.PictureAndContent{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 320px;
+    margin-top: 30px;
+}
+
+.ContentModal{
+    display: flex;
+    flex-direction: column;
+    width: 57%;
+    padding: 50px 0px;
+}
+
+.Picture{
+    width: 43%;
+    height: 100%;
+}
+
+.imageModal{
+    max-width: 280px;
+    max-height: 360px;
+    height: 100%;
+}
+
+.Description{
+    height: 100%;
+    max-height: 150px;
+    border: 18px solid #eaa49e;
+}
+
+.titlecontentmodal{
+    font-size: 1.5em;
+}
+
+.titlecontentmodal > h1{
+    width: fit-content;
+    background: url('../../../ressources/band.png');
+    background-size: 84px;
+    margin: 0px;
+}
+
+.skillscontentmodal{
+    height: 100%;
+    width: 100%;
+}   
+
+.tableauModal{
+    width: 100%;
+    height: 100%;
+}
+
+td {
+    font-size: 2.5em;
+}
+
+td > span{
+    color: #eaa49e;
+}
+
+.personTitle{
+    display: flex;
+}
+
+.personTitle > p{
+    margin: 0px 0px -55px 14px;
+    font-size: 0.7em;
+}
+
+
+@media screen and (max-width: 450px){
+    .vertSlider{
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 330px){
+    .vertSlider{
+        margin-top: 0px;
+    }
+    .membre{
+        height: 500px;
+    }
+}

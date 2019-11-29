@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.7.0",
+    "pure-react-carousel": "^1.19.4",
+    "radium": "^0.25.1",
     "react": "^16.8.4",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-modal": "^3.8.1",
+    "react-scripts": "2.1.8",
+    "react-view-slider": "^3.0.6"
   },
   "scripts": {
     "start": "react-scripts start",

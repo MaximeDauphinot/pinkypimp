@@ -1,28 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './Header/Header';
+import Container from './Container/Container';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+const App = props => {
+  const [idContainer, setIdContainer] = useState(0);
+
+   const menuHandler = (index) => {
+    setIdContainer(index)
   }
+
+  return (
+    <div className="App">
+        <Header handler={menuHandler}/>
+        <Container index={idContainer}/>
+    </div>
+  );
 }
 
 export default App;

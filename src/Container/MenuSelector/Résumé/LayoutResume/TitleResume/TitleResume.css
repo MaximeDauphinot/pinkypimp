@@ -1,0 +1,9 @@
+.TitleResume{
+    max-width: 940px;
+}
+
+.TitleResume > h1{
+    font-size: 2.5em;
+    margin-block-start: 0em;
+    margin-block-end: 1.34em;
+}

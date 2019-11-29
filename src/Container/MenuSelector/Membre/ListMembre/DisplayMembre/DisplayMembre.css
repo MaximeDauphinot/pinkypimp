@@ -1,0 +1,39 @@
+.DisplayMembre{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.test{
+    display: flex;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.select{
+    display: none;
+}
+
+.test:hover {
+   background: url('../../../../../ressources/select.png');
+   background-repeat: no-repeat;
+   background-position: 100%; 
+}
+
+.marginNom{
+    margin: 0px;
+    font-family: 'Chivo';
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.marginPrenom{
+    font-family: 'Chivo';
+    margin: 0px;
+}
+
+@media screen and (max-width: 450px){
+    .DisplayMembre{
+        font-size: 0.65em;
+    }
+}

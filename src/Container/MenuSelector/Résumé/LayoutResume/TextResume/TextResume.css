@@ -1,0 +1,11 @@
+.TextResume{
+    max-height: 50%;
+    height: 100%;
+}
+
+.TextResume > p{
+    text-align: left;
+    margin: 16px 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 16px 80px 16px 0px;
+}
