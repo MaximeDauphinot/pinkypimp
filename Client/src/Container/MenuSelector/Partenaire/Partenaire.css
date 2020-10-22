@@ -1,0 +1,20 @@
+.partenaire{
+    background-color: rgb(245, 232, 239);
+    overflow: scroll;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    flex-direction: row;
+    height: 100%;
+    max-width: 800px;
+    max-height: 400px;
+    margin-bottom: 100px;
+}
+
+
+@media screen and (max-width: 450px){
+    .partenaire{
+        max-width: 300px;
+    }
+}

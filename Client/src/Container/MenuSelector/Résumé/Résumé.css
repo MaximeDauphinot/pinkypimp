@@ -1,0 +1,20 @@
+.resume_logo{
+    font-weight: 900;
+    font-size: 1.4em;
+    max-width: 650px;
+    max-height: 300px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 490px){
+    .s_logo{
+        font-size: 4em;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .resume_logo{
+        font-size: 16px;
+        max-width: 320px;
+    }
+}
