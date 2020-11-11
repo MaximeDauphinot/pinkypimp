@@ -60,15 +60,7 @@ const Login = (props) => {
         <Button
           variant="contained"
           className={classes.Button}
-          onClick={() => {
-            fetch("http://localhost:5000/", {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }).then((res) => res.json().then((test) => console.log(test)));
-            props.setIsLogged();
-          }}
+          onClick={props.setIsLogged}
         >
           Connexion
         </Button>

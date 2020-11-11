@@ -7,6 +7,33 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import AirplanemodeActiveIcon from "@material-ui/icons/AirplanemodeActive";
 
+const menuLateralBar = [
+  {
+    name: "Accueil",
+    icon: <AirplanemodeActiveIcon />,
+  },
+  {
+    name: "La team",
+    icon: <AirplanemodeActiveIcon />,
+  },
+  // {
+  //   name: "Les reufs",
+  //   icon: <AirplanemodeActiveIcon />,
+  // },
+  // {
+  //   name: "Résumé",
+  //   icon: <AirplanemodeActiveIcon />,
+  // },
+  // {
+  //   name: "news",
+  //   icon: <AirplanemodeActiveIcon />,
+  // },
+  // {
+  //   name: "Autres",
+  //   icon: <AirplanemodeActiveIcon />,
+  // },
+];
+
 const useStyle = makeStyles({
   lateralBar: {
     display: "flex",
@@ -24,17 +51,8 @@ const useStyle = makeStyles({
   },
 });
 
-function generate(element) {
-  return [0, 1, 2, 4, 5, 6, 7, 8, 9].map((value) =>
-    React.cloneElement(element, {
-      key: value,
-    })
-  );
-}
-
-const LateralBar = () => {
+const LateralBar = (props) => {
   const classes = useStyle();
-  const [secondary, setSecondary] = React.useState(false);
 
   return (
     <Container
@@ -44,17 +62,20 @@ const LateralBar = () => {
     >
       <div className={classes.bar}>
         <List dense={false}>
-          {generate(
-            <ListItem className={classes.items}>
-              <ListItemAvatar>
-                <AirplanemodeActiveIcon />
-              </ListItemAvatar>
-              <ListItemText
-                primary="Single-line item"
-                secondary={secondary ? "Secondary text" : null}
-              />
-            </ListItem>
-          )}
+          {menuLateralBar.map((value, index) => {
+            return (
+              <ListItem
+                className={classes.items}
+                key={index}
+                onClick={() => {
+                  props.handleComponents(value.name);
+                }}
+              >
+                <ListItemAvatar>{value.icon}</ListItemAvatar>
+                <ListItemText primary={value.name} />
+              </ListItem>
+            );
+          })}
         </List>
       </div>
     </Container>
