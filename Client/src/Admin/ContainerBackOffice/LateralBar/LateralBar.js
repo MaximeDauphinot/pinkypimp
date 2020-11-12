@@ -32,6 +32,10 @@ const menuLateralBar = [
   //   name: "Autres",
   //   icon: <AirplanemodeActiveIcon />,
   // },
+  {
+    name: "New admin user",
+    icon: <AirplanemodeActiveIcon />,
+  },
 ];
 
 const useStyle = makeStyles({

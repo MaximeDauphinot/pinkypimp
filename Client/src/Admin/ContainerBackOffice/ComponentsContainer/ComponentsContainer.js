@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import AccueilBackOffice from "./AccueilBackOffice/AccueilBackOffice";
 import MembreBackOffice from "./MembreBackOffice/MembreBackOffice";
+import NewAdminUser from "./NewAdminUser/NewAdminUser";
 
 const useStyle = makeStyles({
   ComponentsContainer: {
@@ -24,6 +25,8 @@ const menuReducer = (prevState, action) => {
     //   return <News />;
     // case "Autres":
     //   return <News />;
+    case "New admin user":
+      return <NewAdminUser />;
     default:
       throw new Error("Something goes wrong !");
   }

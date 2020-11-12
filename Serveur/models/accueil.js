@@ -1,56 +1,12 @@
-const mongodb = require("mongodb");
-const getDb = require("../util/database").getDb;
+const mongoose = require("mongoose");
 
-class Acceuil {
-  constructor(text, id) {
-    this.text = text;
-    this._id = id ? new mongodb.ObjectId(id) : null;
-  }
+const Schema = mongoose.Schema;
 
-  save() {
-    const db = getDb();
-    let dbOp;
-    if (this._id) {
-      dbOp = db.collection("home").updateOne({ _id: this._id }, { $set: this });
-    } else {
-      dbOp = db.collection("home").insertOne(this);
-    }
-    return dbOp
-      .then((result) => {
-        // console.log(result);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+const accueilSchema = new Schema({
+  text: {
+    type: String,
+    required: true,
+  },
+});
 
-  static fetchAll() {
-    const db = getDb();
-    return db
-      .collection("home")
-      .find()
-      .toArray()
-      .then((text) => {
-        return text;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  static findById(textId) {
-    const db = getDb();
-    return db
-      .collection("home")
-      .find({ _id: new mongodb.ObjectId(textId) })
-      .next()
-      .then((text) => {
-        return text;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-}
-
-module.exports = Acceuil;
+module.exports = mongoose.model("Accueil", accueilSchema);

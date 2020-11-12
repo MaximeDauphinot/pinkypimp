@@ -12,6 +12,9 @@ const useStyle = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
   },
   container: {
     marginTop: "20px",
@@ -19,7 +22,7 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 const AccueilBackOffice = () => {
-  const [text, setText] = useState([{}]);
+  const [text, setText] = useState({});
   const classes = useStyle();
 
   useEffect(() => {
@@ -37,9 +40,9 @@ const AccueilBackOffice = () => {
   }, []);
 
   const sendData = () => {
-    fetch("http://localhost:5000/front/accueil/editText", {
+    fetch("http://localhost:5000/front/accueil", {
       method: "POST",
-      body: JSON.stringify({ _id: text[0]._id, text: text[0].text }),
+      body: JSON.stringify({ _id: text._id, text: text.text }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -62,9 +65,9 @@ const AccueilBackOffice = () => {
             <label>Text accueil :</label>
             <textarea
               name="description"
-              value={text[0].text}
+              value={text.text}
               onChange={(e) => {
-                setText([{ _id: text[0]._id, text: e.target.value }]);
+                setText({ _id: text._id, text: e.target.value });
               }}
               rows="5"
               cols="80"

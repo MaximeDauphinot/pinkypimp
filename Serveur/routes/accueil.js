@@ -1,11 +1,11 @@
 const express = require("express");
 
-const acceuilController = require("../controllers/accueil");
+const accueilController = require("../controllers/accueil");
 
 const router = express.Router();
 
-router.get("/accueil", acceuilController.getText);
+router.get("/accueil", accueilController.getText);
 
-router.post("/accueil/editText", acceuilController.postEditText);
+router.post("/accueil", accueilController.postEditText);
 
 module.exports = router;

@@ -1,23 +1,21 @@
 const Accueil = require("../models/accueil");
 
 exports.getText = (req, res, next) => {
-  Accueil.fetchAll()
-    .then((products) => {
-      res.status(200).json(products);
+  Accueil.find()
+    .then((text) => {
+      res.status(200).json(text[0]);
     })
     .catch((err) => console.log(err));
 };
 
 exports.postEditText = (req, res, next) => {
-  const prodId = req.body._id;
+  const textId = req.body._id;
   const updatedText = req.body.text;
 
-  const acceuil = new Accueil(updatedText, prodId);
-
-  acceuil
-    .save()
-    .then((result) => {
-      console.log("UPDATED PRODUCT!");
+  Accueil.findById(textId)
+    .then((text) => {
+      text.text = updatedText;
+      return text.save();
     })
     .catch((err) => console.log(err));
 };

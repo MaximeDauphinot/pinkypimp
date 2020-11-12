@@ -28,7 +28,7 @@ const accueil = () => {
       </ScrollAnimation>
       <ScrollAnimation animateIn="slideInRight" duration={2}>
         <div className="TextAccueil">
-          <p>{text[0].text}</p>
+          <p>{text.text}</p>
         </div>
       </ScrollAnimation>
     </div>
