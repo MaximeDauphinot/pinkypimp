@@ -16,13 +16,13 @@ const useStyle = makeStyles({
   },
 });
 
-const Header = () => {
+const Header = (props) => {
   const classes = useStyle();
 
   return (
     <Container maxWidth={false} className={classes.header}>
       <img src={Logo} alt="Logo" className={classes.logo} />
-      <Account />
+      <Account setIsLogged={props.setIsLogged} token={props.token} />
     </Container>
   );
 };

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -23,10 +24,11 @@ const useStyle = makeStyles((theme) => ({
   formContainer: {
     width: "50%",
     display: "flex",
+    flexDirection: "column",
+  },
+  alignForm: {
+    display: "flex",
     flexDirection: "row",
-    border: "1px solid",
-    borderColor: theme.palette.text.secondary,
-    borderRadius: "5px",
   },
   divContainerForm: {
     width: "100%",
@@ -38,40 +40,38 @@ const useStyle = makeStyles((theme) => ({
   TextField: {
     width: "inherit",
   },
+  button: {
+    margin: theme.spacing(1),
+    color: "white",
+    backgroundColor: "rgb(236, 65, 210)",
+    "&:hover": {
+      backgroundColor: "white",
+      color: "rgb(236, 65, 210)",
+    },
+  },
 }));
 
 const AccueilBackOffice = () => {
-  const [text, setText] = useState({});
   const classes = useStyle();
 
-  //   useEffect(() => {
-  //     fetch("http://localhost:5000/front/accueil", {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then((res) => res.json())
-  //       .then((text) => {
-  //         setText(text);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }, []);
-
-  //   const sendData = () => {
-  //     fetch("http://localhost:5000/front/accueil", {
-  //       method: "POST",
-  //       body: JSON.stringify({ _id: text._id, text: text.text }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then((res) => res.json())
-  //       .then((text) => {
-  //         console.log(text);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   };
+  const sendData = (e) => {
+    fetch("http://localhost:5000/front/newUser", {
+      method: "POST",
+      body: JSON.stringify({
+        nom: e.target.nom.value,
+        prenom: e.target.prenom.value,
+        email: e.target.email.value,
+        password: e.target.password.value,
+        confirmPassword: e.target.confirmPassword.value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => alert(data.message))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <Container maxWidth={false} className={classes.root}>
@@ -86,32 +86,52 @@ const AccueilBackOffice = () => {
               className={classes.formContainer}
               noValidate
               autoComplete="off"
+              onSubmit={(e) => {
+                e.preventDefault();
+                sendData(e);
+                e.target.nom.value = "";
+                e.target.prenom.value = "";
+                e.target.email.value = "";
+                e.target.password.value = "";
+                e.target.confirmPassword.value = "";
+              }}
             >
-              <div className={classes.divContainerForm}>
-                <TextField className={classes.TextField} id="Nom" label="Nom" />
-                <TextField
-                  className={classes.TextField}
-                  id="Email"
-                  label="Email"
-                />
-                <TextField
-                  className={classes.TextField}
-                  id="ConfirmPassword"
-                  label="ConfirmPassword"
-                />
+              <div className={classes.alignForm}>
+                <div className={classes.divContainerForm}>
+                  <TextField
+                    className={classes.TextField}
+                    name="nom"
+                    label="Nom"
+                  />
+                  <TextField
+                    className={classes.TextField}
+                    name="email"
+                    label="Email"
+                  />
+                  <TextField
+                    className={classes.TextField}
+                    name="confirmPassword"
+                    label="ConfirmPassword"
+                    type="password"
+                  />
+                </div>
+                <div className={classes.divContainerForm}>
+                  <TextField
+                    className={classes.TextField}
+                    name="prenom"
+                    label="Prenom"
+                  />
+                  <TextField
+                    className={classes.TextField}
+                    name="password"
+                    label="Password"
+                    type="password"
+                  />
+                </div>
               </div>
-              <div className={classes.divContainerForm}>
-                <TextField
-                  className={classes.TextField}
-                  id="Prenom"
-                  label="Prenom"
-                />
-                <TextField
-                  className={classes.TextField}
-                  id="Password"
-                  label="Password"
-                />
-              </div>
+              <Button variant="contained" className={classes.button}>
+                Send
+              </Button>
             </form>
           </Paper>
         </Grid>

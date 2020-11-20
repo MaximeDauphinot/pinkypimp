@@ -3,7 +3,7 @@ const Accueil = require("../models/accueil");
 exports.getText = (req, res, next) => {
   Accueil.find()
     .then((text) => {
-      res.status(200).json(text[0]);
+      return res.send({ token: req.session.csrfToken, text: text[0] });
     })
     .catch((err) => console.log(err));
 };
